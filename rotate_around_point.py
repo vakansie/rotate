@@ -11,7 +11,8 @@ b=np.ones((6,6))
 # put white block on the grid
 view[13:19, 3:9] = b
 
-# dit was voor gifjes
+# dit was voor gifjes:
+#(
 from PIL import Image
 color_dict= {0: [0,0,0], 1: [255,255,255]}
 image_array= np.ndarray(shape=(31,31,3), dtype=np.uint8)
@@ -25,7 +26,8 @@ def draw(view, image_array):
     image_arr = np.repeat(np.repeat(image_array,5, axis=0), 5, axis=1)
     sized_array = Image.fromarray(image_arr, mode='RGB')
     sized_array.save(f'img\\goes{imgnum}.png')
-
+#)
+    
 # blit the view to the screen
 def blit(view):
     for x in range(len(view)):
@@ -39,7 +41,7 @@ def blit(view):
 blit(view)
 
 # oooh fancy smancy rotation matrix
-
+# maar dan zonder matrix
 middle = np.array((15,15))
 def rotate(view, angle):
     theta= np.radians(angle)
