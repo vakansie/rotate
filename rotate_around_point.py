@@ -22,9 +22,9 @@ def draw(view, image_array):
     imgnum = next(nums)
     for position, square in np.ndenumerate(view):
         image_array[position[1],position[0], :] = color_dict[square]
-    image_arr = np.repeat(np.repeat(image_array,5, axis=0), 5, axis=1)
-    sized_array = Image.fromarray(image_arr, mode='RGB')
-    sized_array.save(f'img\\goes{imgnum}.png')
+    sized_array = np.repeat(np.repeat(image_array,5, axis=0), 5, axis=1)
+    image = Image.fromarray(sized_array, mode='RGB')
+    image.save(f'img\\goes{imgnum}.png')
 #)
 
 
@@ -54,7 +54,7 @@ def rotate(view, angle):
         y_new = int(np.sin((theta)) * (vector[0] - middle[0]) + np.cos((theta)) * (vector[1] - middle[1]) + middle[0])
         new[x_new, y_new] = 1
 
-    return(new) 
+    return(new)
 
 input("aaaarrrrre you readdddyyyyyyyy!!!!")
 while True:
